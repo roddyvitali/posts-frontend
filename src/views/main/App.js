@@ -18,7 +18,7 @@ class App extends Component {
     const { listado, searchText } = this.props;
     return (
       <div className="App">
-        <h2>Postulación para: </h2>
+        <h2>Postulación parar: </h2>
         <img className="AppLogo" src="https://www.tcit.cl/img/logo.png"/>
         <Filter />
         <List /*data={listado} search={searchText}*/ />
