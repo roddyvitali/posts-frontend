@@ -1,0 +1,7 @@
+.BtnAdd {
+    height: 40px;
+    width: 100px;
+}
+.InputAdd {
+    width: calc( 50% - 50px );
+}

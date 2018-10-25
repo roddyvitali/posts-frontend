@@ -1,0 +1,7 @@
+.InputSearch {
+    width: calc( 100% - 60px );
+}
+.BtnSearch {
+    height: 40px;
+    width: 60px;
+}

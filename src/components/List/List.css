@@ -1,0 +1,47 @@
+table {
+    width: 100%;
+    text-align: left;
+}
+.ContainerList {
+    background-color: aliceblue;
+    padding: 10px;
+}
+.ColName {
+    width: 150px;
+}
+.ColDesc {
+    width: 300px;
+}
+.ColAction {
+    text-align: center;
+    width: 150px;
+}
+.ColBodyAction {
+    text-align: center;
+}
+.TextNameBody {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.TextDescBody {
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ColEmpty {
+    font-size: 12px;
+    font-style: oblique;
+    text-align: center;
+}
+.IconEmpty {
+    color: rgba( 35, 38, 38, 0.3);
+}
+.IconRemove {
+    color: red;
+}
+.ItemRemove {
+    cursor: pointer;
+}
