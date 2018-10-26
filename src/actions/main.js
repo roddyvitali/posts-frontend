@@ -1,8 +1,6 @@
 import { URL_SERVER, LOAD_POSTS, INSERT_POST, DELETE_POST, FILTER_POST } from './../common/config'
 
-
-
-export function itemFetchDataPosts() {
+export const itemFetchDataPosts = () =>{
   return (dispatch) => {
       fetch( `${URL_SERVER}`, {
         method: 'GET'
@@ -14,7 +12,7 @@ export function itemFetchDataPosts() {
   };
 }
 
-export function itemFetchDeletePosts(id) {
+export const itemFetchDeletePosts = id => {
     return (dispatch) => {
         fetch( `${URL_SERVER}/${id}`, {
           method: 'DELETE'
@@ -26,21 +24,19 @@ export function itemFetchDeletePosts(id) {
     };
   }
 
-export function itemFetchInsertPost(post) {
+export const itemFetchInsertPost = post => {
     return (dispatch) => {
-        let formData  = new FormData(post);
-        console.log(formData)
-        // fetch( `${URL_SERVER}`, {
-        //   method: 'POST',
-        //   headers: {
-        //     'Content-Type': 'application/x-www-form-urlencoded'
-        //   },
-        //   body: formData
-        // })
-        // .then( response => response.json() )
-        // .then((items) => {
-        //   return( dispatch( insertPost(items) ) )
-        // } )
+        fetch( `${URL_SERVER}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(post)
+        })
+        .then( response => response.json() )
+        .then((items) => {
+          return( dispatch( insertPost(items) ) )
+        } )
     };
 }
 
@@ -55,11 +51,11 @@ export const insertPost = payload => ({
 })
 
 export const deletePost = payload => ({
-    type: DELETE_POST,
-    payload
-  })
+  type: DELETE_POST,
+  payload
+})
 
-  export const filterPost = payload => ({
-    type: FILTER_POST,
-    payload
-  })
+export const filterPost = payload => ({
+  type: FILTER_POST,
+  payload
+})
