@@ -6,6 +6,16 @@ Ejemplo representativo de la solución.
 
 ![](screenshot.png)
 
+## Install
+```sh
+npm install
+```
+
 ## Start
-´´´ npm start ´´´
+```sh
+npm start
+```
+
+## Languages
+>React.js + Redux
 
