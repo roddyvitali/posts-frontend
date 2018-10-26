@@ -26,10 +26,9 @@ class App extends Component {
     );
   }
 }
-const mapStateToProps = ( state, props ) => ({
-})
+
 const mapDispatchToProps = dispatch => ({
   getAllPost: payload => dispatch(itemFetchDataPosts(payload))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);

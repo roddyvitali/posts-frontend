@@ -11,32 +11,18 @@ class Form extends Component {
     description: ''
   }
 
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
+  handleChange = this.handleChange.bind(this);
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
-
-  handleSubmit(event) {
-    event.preventDefault();
-
-    console.log(this.state)
-    this.props.insertPost(this.state)
-  }
-
   render() {
     const { name, description } = this.state;
-
     return (
       <div>
         <input className="InputAdd" placeholder="Ingrese un nombre" value={ name } name="name" onChange={this.handleChange} />
         <input className="InputAdd" placeholder="Ingrese una Descripción" value={ description } name="description" onChange={this.handleChange} />
-        <button type="submit" className="Btn BtnAdd" onClick={this.handleSubmit}>
+        <button type="submit" className="Btn BtnAdd" onClick={()=>this.props.insertPost(this.state) }>
           <i className="fas fa-plus" /> Agregar
         </button>
       </div>
@@ -44,7 +30,7 @@ class Form extends Component {
   }
 }
 
-const mapStateToProps = ( state, props ) => ({
+const mapStateToProps = ( state ) => ({
   listado: state.listado
 })
 const mapDispatchToProps = dispatch => ({

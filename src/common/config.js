@@ -1,4 +1,4 @@
-export const URL_SERVER = 'http://localhost:3000/data';
+export const URL_SERVER = 'http://localhost:3000/posts';
 
 export const LOAD_POSTS = 'LOAD_POSTS';
 export const INSERT_POST = 'INSERT_POST';

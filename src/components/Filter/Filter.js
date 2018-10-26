@@ -33,9 +33,8 @@ class Filter extends Component {
     );
   }
 }
-const mapStateToProps = ( state, props ) => ({})
 const mapDispatchToProps = dispatch => ({
   filterPost: payload => dispatch(filterPost(payload))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Filter);
+export default connect(null, mapDispatchToProps)(Filter);

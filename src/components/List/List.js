@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { itemFetchDeletePosts } from '../../actions/main';
 
@@ -30,12 +30,10 @@ const ListEmpty = () => {
       </tr>
   )
 }
-class List extends Component {
-  render() {
-    const { listado, search } = this.props;
-    console.log(this.props)
-    return (
-      <div className="ContainerList">
+const List = (props) => {
+  const { listado, search, filterListado, deletePost } = props;
+  return(
+    <div className="ContainerList">
         <table>
           <thead>
             <tr>
@@ -46,21 +44,17 @@ class List extends Component {
           </thead>
           <tbody>
             { listado.length > 0 ? 
-                search != '' ? 
-                  <Rows list={ this.props.filterListado } deletePost={ this.props.deletePost } />
-                :
-                  <Rows list={ listado } deletePost={ this.props.deletePost } />
+              <Rows list={ search !== '' ? filterListado : listado } deletePost={ deletePost } />
             :
               <ListEmpty />
             } 
           </tbody>
         </table>
       </div>
-    );
-  }
+  )
 }
 
-const mapStateToProps = ( state, props ) => ({
+const mapStateToProps = ( state ) => ({
   filterListado: state.filterListado,
     listado: state.listado,
     search: state.searchText
